@@ -27,7 +27,7 @@ export default function Stats() {
   ]
 
   return (
-    <section className="relative py-20 md:py-28 bg-navy border-y border-white/5 overflow-hidden">
+    <section className="relative py-12 md:py-16 bg-navy border-y border-white/5 overflow-hidden">
       {/* Grid Pattern - Very subtle */}
       <div className="absolute inset-0 bg-grid pointer-events-none opacity-[0.25]" />
       
@@ -62,12 +62,6 @@ export default function Stats() {
               </span>
             </div>
           ))}
-        </div>
-
-        {/* Section Kicker Footer (from screenshot) */}
-        <div className="mt-20 flex flex-col items-center">
-           <div className="h-px w-full bg-linear-to-r from-transparent via-white/5 to-transparent mb-12" />
-           <p className="text-[12px] font-bold text-crimson uppercase tracking-[0.3em]">Features</p>
         </div>
       </div>
     </section>
