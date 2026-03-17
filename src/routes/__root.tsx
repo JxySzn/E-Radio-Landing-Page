@@ -1,7 +1,6 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
-import Footer from '../components/Footer.tsx'
 import Navbar from '../components/Navbar.tsx'
 
 import appCss from '../styles.css?url'
@@ -19,7 +18,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'RadioWave - The World\'s Radio',
       },
     ],
     links: [
@@ -42,7 +41,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body className="font-sans antialiased wrap-anywhere selection:bg-[rgba(79,184,178,0.24)]">
         <Navbar />
         {children}
-        <Footer />
         <TanStackDevtools
           config={{
             position: 'bottom-right',
