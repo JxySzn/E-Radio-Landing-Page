@@ -2,13 +2,10 @@
   "name": "e-radio-web",
   "private": true,
   "type": "module",
-  "imports": {
-    "#/*": "./src/*"
-  },
   "scripts": {
-    "dev": "vite dev --port 3000",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "bun x vite dev --port 3000",
+    "build": "bun x vite build",
+    "preview": "bun x vite preview",
     "test": "vitest run"
   },
   "dependencies": {
