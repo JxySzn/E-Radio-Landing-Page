@@ -1,4 +1,5 @@
 import { Play, Apple, Smartphone, Star, Radio, History, Share2, Heart } from 'lucide-react'
+import { Button } from "@/components/ui/button"
 
 export default function Hero() {
   return (
@@ -35,21 +36,23 @@ export default function Hero() {
               {/* Primary Button with Glow */}
               <div className="relative group w-full sm:w-auto">
                 <div className="absolute inset-x-0 bottom-0 h-full w-full bg-crimson/40 blur-[24px] rounded-2xl opacity-100 group-hover:bg-crimson/60 transition-all" />
-                <button type="button" className="relative flex items-center justify-center gap-3 bg-crimson hover:bg-crimson/90 text-white px-8 py-4.5 rounded-2xl font-bold text-[16px] transition-all w-full sm:w-auto active:scale-[0.98]">
-                  <Play className="fill-current h-4.5 w-4.5" />
+                <Button 
+                  className="relative h-auto bg-crimson hover:bg-crimson/90 text-white px-8 py-5 rounded-2xl font-bold text-[16px] transition-all w-full sm:w-auto active:scale-[0.98] border-none"
+                >
+                  <Play className="fill-current h-4.5 w-4.5 mr-2" />
                   Listen Now — Free
-                </button>
+                </Button>
               </div>
               
               <div className="flex items-center gap-3 w-full sm:w-auto">
-                <button type="button" className="flex-1 sm:flex-none flex items-center justify-center gap-2.5 bg-white/5 hover:bg-white/10 border border-white/10 px-6 py-4.5 rounded-2xl font-bold text-white text-[15px] transition-all">
-                  <Apple className="h-4.5 w-4.5" />
+                <Button variant="outline" className="flex-1 sm:flex-none h-auto bg-white/5 hover:bg-white/10 border-white/10 px-6 py-5 rounded-2xl font-bold text-white text-[15px] transition-all">
+                  <Apple className="h-4.5 w-4.5 mr-2" />
                   App Store
-                </button>
-                <button type="button" className="flex-1 sm:flex-none flex items-center justify-center gap-2.5 bg-white/5 hover:bg-white/10 border border-white/10 px-6 py-4.5 rounded-2xl font-bold text-white text-[15px] transition-all">
-                  <Play className="h-4.5 w-4.5 fill-white" />
+                </Button>
+                <Button variant="outline" className="flex-1 sm:flex-none h-auto bg-white/5 hover:bg-white/10 border-white/10 px-6 py-5 rounded-2xl font-bold text-white text-[15px] transition-all">
+                  <Smartphone className="h-4.5 w-4.5 mr-2" />
                   Play Store
-                </button>
+                </Button>
               </div>
             </div>
 
@@ -78,7 +81,7 @@ export default function Hero() {
             {/* Desktop/Large Layout: Two Phones side-by-side (hidden on medium/small) */}
             <div className="hidden xl:flex items-end gap-0">
                {/* Browser Mockup */}
-               <div className="relative z-10 w-[260px] h-[520px] rounded-[42px] border-[8px] border-[#10101e] bg-[#0a0a14] shadow-2xl overflow-hidden translate-y-12">
+               <div className="relative z-10 w-[260px] h-[520px] rounded-[42px] border-8 border-[#10101e] bg-[#0a0a14] shadow-2xl overflow-hidden translate-y-12">
                    <div className="p-6 space-y-5">
                       <p className="text-[10px] font-bold text-white/30 uppercase tracking-[0.15em]">Browse Stations</p>
                       {[
@@ -106,7 +109,7 @@ export default function Hero() {
                </div>
                
                {/* Player Mockup */}
-               <div className="relative z-20 w-[300px] h-[600px] rounded-[48px] border-[10px] border-[#10101e] bg-[#080812] shadow-[0_0_80px_rgba(233,69,96,0.1)] overflow-hidden -ml-16">
+               <div className="relative z-20 w-[300px] h-[600px] rounded-[48px] border-10 border-[#10101e] bg-[#080812] shadow-[0_0_80px_rgba(233,69,96,0.1)] overflow-hidden -ml-16">
                   <PhoneUI />
                </div>
             </div>
@@ -114,15 +117,15 @@ export default function Hero() {
             {/* Medium Layout: 3 Phones (visible on md and lg, hidden on xl and sm) */}
             <div className="hidden md:flex xl:hidden items-end justify-center w-full max-w-4xl gap-4 h-[550px]">
                {/* Back Left */}
-               <div className="w-[200px] h-[400px] rounded-[32px] border-[6px] border-[#10101e] bg-[#0a0a14] opacity-40 overflow-hidden translate-y-4">
+               <div className="w-[200px] h-[400px] rounded-[32px] border-6 border-[#10101e] bg-[#0a0a14] opacity-40 overflow-hidden translate-y-4">
                   <PhoneUI isMini />
                </div>
                {/* Center Foreground */}
-               <div className="relative z-20 w-[260px] h-[520px] rounded-[40px] border-[8px] border-[#10101e] bg-[#080812] shadow-[0_0_60px_rgba(233,69,96,0.1)] overflow-hidden">
+               <div className="relative z-20 w-[260px] h-[520px] rounded-[40px] border-8 border-[#10101e] bg-[#080812] shadow-[0_0_60px_rgba(233,69,96,0.1)] overflow-hidden">
                   <PhoneUI />
                </div>
                {/* Back Right */}
-               <div className="w-[200px] h-[400px] rounded-[32px] border-[6px] border-[#10101e] bg-[#0a0a14] opacity-40 overflow-hidden translate-y-4">
+               <div className="w-[200px] h-[400px] rounded-[32px] border-6 border-[#10101e] bg-[#0a0a14] opacity-40 overflow-hidden translate-y-4">
                   <PhoneUI isMini />
                </div>
             </div>
@@ -135,7 +138,7 @@ export default function Hero() {
                   <span className="text-[11px] font-bold text-white/80">HD Active</span>
                </div>
                
-               <div className="relative z-20 w-[280px] h-[560px] rounded-[44px] border-[10px] border-[#10101e] bg-[#080812] shadow-[0_0_50px_rgba(233,69,96,0.15)] overflow-hidden">
+               <div className="relative z-20 w-[280px] h-[560px] rounded-[44px] border-10 border-[#10101e] bg-[#080812] shadow-[0_0_50px_rgba(233,69,96,0.15)] overflow-hidden">
                   <PhoneUI />
                </div>
                
