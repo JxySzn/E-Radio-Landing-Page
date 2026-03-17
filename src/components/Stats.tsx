@@ -27,7 +27,7 @@ export default function Stats() {
   ]
 
   return (
-    <section className="relative py-20 md:py-28 bg-[#0a0a14] border-y border-white/5 overflow-hidden">
+    <section className="relative py-20 md:py-28 bg-navy border-y border-white/5 overflow-hidden">
       {/* Grid Pattern - Very subtle */}
       <div className="absolute inset-0 bg-grid pointer-events-none opacity-[0.25]" />
       
@@ -52,7 +52,7 @@ export default function Stats() {
           {stats.map((stat, i) => (
             <div 
               key={i} 
-              className="bg-[#10101e] border border-white/10 rounded-[28px] py-10 flex flex-col items-center justify-center text-center shadow-[0_12px_40px_rgba(0,0,0,0.4)]"
+              className="bg-surface border border-white/10 rounded-[28px] py-10 flex flex-col items-center justify-center text-center shadow-[0_12px_40px_rgba(0,0,0,0.4)]"
             >
               <span className="text-[34px] font-extrabold tracking-tight text-white leading-none">
                 {stat.value}

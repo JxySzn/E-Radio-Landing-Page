@@ -1,0 +1,108 @@
+import { Globe, Headphones, Zap, Mic2, Music, ShieldCheck } from 'lucide-react'
+
+const features = [
+  {
+    title: '50,000+ Stations Worldwide',
+    description: 'Tune in to radio from every corner of the globe — jazz from NYC, pop from London, beats from Tokyo.',
+    icon: Globe,
+    color: 'text-crimson',
+    bgColor: 'bg-crimson/10',
+    titleMedium: '50K+ Stations',
+    descMedium: 'Every genre, every country.'
+  },
+  {
+    title: 'Crystal-Clear HD Audio',
+    description: 'Stream at up to 320kbps for studio-quality sound. Every note, every beat, as the artist intended.',
+    icon: Headphones,
+    color: 'text-mint',
+    bgColor: 'bg-mint/10',
+    titleMedium: 'HD Audio',
+    descMedium: 'Stream up to 320kbps.'
+  },
+  {
+    title: 'Instant Station Switching',
+    description: 'Zero buffering. Switch between stations instantly without losing a beat. Smooth as silk.',
+    icon: Zap,
+    color: 'text-amber',
+    bgColor: 'bg-amber/10',
+    titleMedium: 'Instant Switch',
+    descMedium: 'Zero buffering between stations.'
+  },
+  {
+    title: 'Live Shows & Events',
+    description: 'Never miss a live broadcast. Get notified when your favorite stations or DJs go live.',
+    icon: Mic2,
+    color: 'text-purple',
+    bgColor: 'bg-purple/10',
+    titleMedium: 'Live Shows',
+    descMedium: 'Get notified for live broadcasts.'
+  },
+  {
+    title: 'Smart Recommendations',
+    description: 'Discover new stations powered by AI that learns your taste over time. Better with every play.',
+    icon: Music,
+    color: 'text-teal-400',
+    bgColor: 'bg-teal-400/10',
+    titleMedium: 'Smart Picks',
+    descMedium: 'AI-powered recommendations.'
+  },
+  {
+    title: 'Offline & Background Play',
+    description: 'Keep listening when your screen is off. No interruptions, ever. Reliable and efficient.',
+    icon: ShieldCheck,
+    color: 'text-orange-500',
+    bgColor: 'bg-orange-500/10',
+    titleMedium: 'Background Play',
+    descMedium: 'Keeps playing when screen is off.'
+  }
+]
+
+export default function Features() {
+  return (
+    <section className="py-24 md:py-32 bg-navy-deep">
+      <div className="mx-auto max-w-7xl px-6">
+        {/* Header Section */}
+        <div className="text-center mb-16 md:mb-24">
+          <p className="text-[11px] md:text-[12px] font-bold text-crimson uppercase tracking-[0.3em] mb-4">
+            <span className="hidden lg:inline">Everything You Need</span>
+            <span className="inline lg:hidden">Features</span>
+          </p>
+          <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-extrabold text-white tracking-[-0.02em] mb-6">
+            Built for True Listeners
+          </h2>
+          <p className="text-[15px] md:text-[17px] lg:text-[18px] text-white/50 max-w-2xl mx-auto font-medium leading-relaxed">
+            Every feature crafted with audio quality and ease of use at its core.
+          </p>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
+          {features.map((feature, i) => (
+            <div 
+              key={i} 
+              className="group relative bg-surface border border-white/5 rounded-[28px] p-6 sm:p-8 flex flex-row items-center gap-6 md:flex-col md:items-start md:gap-0 transition-all hover:bg-surface/80 hover:border-white/10 hover:-translate-y-1 shadow-2xl"
+            >
+              <div className={`shrink-0 h-11 w-11 md:h-12 md:w-12 rounded-2xl ${feature.bgColor} flex items-center justify-center md:mb-8 transition-transform group-hover:scale-110`}>
+                <feature.icon className={`h-5 w-5 md:h-6 md:w-6 ${feature.color}`} />
+              </div>
+              
+              <div className="flex flex-col">
+                {/* Responsive Title */}
+                <h3 className="text-[17px] sm:text-[18px] lg:text-[20px] font-bold text-white mb-1.5 md:mb-4">
+                  <span className="block lg:hidden">{feature.titleMedium}</span>
+                  <span className="hidden lg:block">{feature.title}</span>
+                </h3>
+                
+                {/* Responsive Description */}
+                <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-white/40 leading-relaxed font-medium">
+                  <span className="block lg:hidden">{feature.descMedium}</span>
+                  <span className="hidden lg:block">{feature.description}</span>
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
