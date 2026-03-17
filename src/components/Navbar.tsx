@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils"
 
 const navLinks = [
   { label: 'Features', href: '#features' },
+  { label: 'Stations', href: '#stations' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Blog', href: '#blog' },
 ]
@@ -26,59 +27,80 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
         scrolled 
-          ? "bg-[#080812]/80 backdrop-blur-xl border-white/5 py-3" 
+          ? "bg-navy-deep/80 backdrop-blur-xl border-white/5 py-3" 
           : "bg-transparent border-transparent py-5"
       )}
     >
       <div className="mx-auto max-w-7xl px-6">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-2.5 group">
+        <div className="relative flex items-center justify-between">
+          {/* Logo - Stays left */}
+          <a href="/" className="flex items-center gap-2.5 group shrink-0">
             <div className="h-9 w-9 rounded-xl bg-crimson flex items-center justify-center shadow-lg shadow-crimson/20 transition-transform group-hover:scale-105">
               <Radio className="h-5 w-5 text-white" />
             </div>
             <span className="text-[20px] md:text-[22px] font-bold text-white tracking-tight">RadioWave</span>
           </a>
 
-          {/* Desktop/Tablet Links & CTA */}
-          <div className="flex items-center gap-6 lg:gap-8">
-            {/* Nav Links (Hidden on Small, Visible on Medium/Large) */}
-            <div className="hidden md:flex items-center gap-6 lg:gap-8 mr-2 transition-all">
-              {navLinks.map((link) => (
+          {/* LG Centered Links - Only visible on LG+ */}
+          <div className="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-10">
+            {navLinks.map((link) => (
+              <a 
+                key={link.label} 
+                href={link.href}
+                className="text-[15px] font-bold text-white/50 hover:text-white transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          {/* Right Side Actions */}
+          <div className="flex items-center gap-4 md:gap-5 lg:gap-8">
+            {/* MD only Links (Hidden on LG and SM) */}
+            <div className="hidden md:flex lg:hidden items-center gap-6 mr-2 transition-all">
+              {['Features', 'Pricing', 'Blog'].map((label) => (
                 <a 
-                  key={link.label} 
-                  href={link.href}
-                  className="text-[14px] lg:text-[15px] font-bold text-white/50 hover:text-white transition-colors"
+                  key={label} 
+                  href={`#${label.toLowerCase()}`}
+                  className="text-[14px] font-bold text-white/50 hover:text-white transition-colors"
                 >
-                  {link.label}
+                  {label}
                 </a>
               ))}
             </div>
 
-            {/* CTA & Menu Toggle */}
-            <div className="flex items-center gap-4 md:gap-5">
-              <Button 
-                className="h-9 md:h-11 px-5 md:px-8 rounded-[14px] md:rounded-[16px] bg-linear-to-r from-[#e94560] to-[#c62828] text-white font-bold text-[13px] md:text-[15px] shadow-lg shadow-crimson/20 border-0 transition-all hover:brightness-110 active:scale-[0.98]"
-              >
-                Download
-              </Button>
+            {/* Sign In - LG only */}
+            <a 
+              href="#signin" 
+              className="hidden lg:block text-[15px] font-bold text-white/50 hover:text-white transition-colors"
+            >
+              Sign In
+            </a>
 
-              <button 
-                onClick={() => setIsOpen(!isOpen)}
-                className="p-1 text-white hover:text-white transition-opacity active:opacity-60"
-                aria-label="Toggle menu"
-              >
-                {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
-            </div>
+            {/* CTA Button */}
+            <Button 
+              className="h-9 md:h-11 px-5 md:px-8 rounded-[14px] md:rounded-[16px] bg-linear-to-r from-crimson to-[#c62828] text-white font-bold text-[13px] md:text-[15px] shadow-lg shadow-crimson/20 border-0 transition-all hover:brightness-110 active:scale-[0.98]"
+            >
+              <span className="lg:hidden">Download</span>
+              <span className="hidden lg:inline">Download Free</span>
+            </Button>
+
+            {/* Menu Toggle - Hidden on LG */}
+            <button 
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-1 text-white lg:hidden transition-opacity active:opacity-60"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay - Unchanged transition logic */}
       <div 
         className={cn(
-          "fixed inset-0 top-[73px] bg-[#080812] z-40 md:hidden transition-all duration-300 transform",
+          "fixed inset-0 top-[73px] bg-navy-deep z-40 lg:hidden transition-all duration-300 transform",
           isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         )}
       >
