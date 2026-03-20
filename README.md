@@ -20,9 +20,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Project Structure
 
-- `src/app/`: Contains the App Router pages and layouts.
-- `src/components/`: Reusable React components.
-- `src/lib/`: Utility functions and shared logic.
+- `app/`: Contains the App Router pages and layouts.
+- `components/`: Reusable React components.
+- `lib/`: Utility functions and shared logic.
 - `public/`: Static assets.
 
 ## Scripts
