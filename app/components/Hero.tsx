@@ -160,10 +160,10 @@ export default function Hero() {
                       {[...Array(5)].map((_, i) => (
                         <div
                           key={i}
-                          className="w-1 bg-gradient-to-t from-[#ff4d4d] to-[#ff8c42] rounded-full"
+                          className="w-1 bg-gradient-to-t from-[#ff4d4d] to-[#ff8c42] rounded-full animate-pulse"
                           style={{
-                            height: `${12 + Math.random() * 16}px`,
-                            animation: `pulse 0.5s ease-in-out infinite ${i * 0.1}s`
+                            height: `${12 + (i * 4)}px`,
+                            animationDelay: `${i * 0.1}s`
                           }}
                         />
                       ))}
